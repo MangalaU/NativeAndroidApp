@@ -15,7 +15,7 @@ public class LoginPage extends BaseClass {
         login.enterPassword(prop.getProperty("password"));
         login.clickLoginButton();
 
-// Assertion 1: popup message visible
+
         Assert.assertTrue(login.login_popup_message().isDisplayed(),
                 "Login success message is not displayed");
     }
