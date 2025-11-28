@@ -8,15 +8,16 @@ import org.testng.annotations.BeforeClass;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.Properties;
 
 public class BaseClass {
 
+
         public static AndroidDriver driver;
         public static Properties prop;
 
-
-     @BeforeClass
+        @BeforeClass
         public static void setup() throws IOException {
 
             // Load properties file
@@ -30,24 +31,34 @@ public class BaseClass {
             options.setAutomationName("UiAutomator2");
             options.setDeviceName("emulator-5554");
 
-            // Correct way to set app path
+            // App path
             options.setApp("C:\\Users\\Mangala\\IdeaProjects\\AndroidDemo\\app\\android.wdio.native.app.v1.0.8.apk");
 
-            // Extra capabilities
+            // Important timeout fixes
+            options.setUiautomator2ServerLaunchTimeout(Duration.ofSeconds(60));
+            options.setUiautomator2ServerInstallTimeout(Duration.ofSeconds(60));
+            options.setAdbExecTimeout(Duration.ofSeconds(60));
+
+            // Waiting settings
             options.setAppWaitActivity("*");
+            options.setAppWaitDuration(Duration.ofSeconds(30));
+
+            // Reset & permissions
             options.setNoReset(false);
+            options.setFullReset(false);
             options.setAutoGrantPermissions(true);
 
-            // Start Appium session
+            // Session timeout
+            options.setNewCommandTimeout(Duration.ofSeconds(300));
+
+            // Start Appium session (Appium 1.x URL)
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), options);
         }
 
-        @AfterClass
-        public static void tearDown() {
-            if (driver != null) {
-                driver.quit();
-            }
+    @AfterClass
+    public static void tearDown() {
+        if (driver != null) {
+            driver.quit();
         }
     }
-
-
+    }

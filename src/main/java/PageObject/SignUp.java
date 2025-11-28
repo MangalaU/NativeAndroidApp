@@ -17,14 +17,18 @@ public class SignUp {
             PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
         }
 
-        @AndroidBy(xpath = "//android.widget.TextView[@text=\"Sign up\"]")
+
+
+        @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"Sign up\"]")
         private WebElement signupform;
+
 
         @AndroidFindBy(xpath = "//android.widget.EditText[@content-desc='input-name']")
         private WebElement nameField;
 
         @AndroidFindBy(xpath = "//android.widget.EditText[@content-desc='input-email']")
         private WebElement emailField;
+
 
         @AndroidFindBy(xpath = "//android.widget.EditText[@content-desc='input-password']")
         private WebElement passwordField;
@@ -42,11 +46,7 @@ public class SignUp {
            signupform.click();
        }
 
-        public void enterName(String name) {
-            nameField.sendKeys(name);
-        }
-
-        public void enterEmail(String email) {
+        public void enterEmailID(String email) {
             emailField.sendKeys(email);
         }
 

@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","26","setup","Default Suite","Fri Nov 28 23:54:12 IST 2025","broken","Fri Nov 28 23:54:12 IST 2025","LoginPage","NativeAppAndroid","LoginPage","setup"
+"","12055","testSignup","All Test Suite","Sat Nov 29 00:37:59 IST 2025","passed","Sat Nov 29 00:38:11 IST 2025","SignupPage","EmergencyWebApp_Suites","SignupPage","testSignup"
+"","9011","loginSetup","All Test Suite","Sat Nov 29 00:38:39 IST 2025","passed","Sat Nov 29 00:38:48 IST 2025","LoginPage","EmergencyWebApp_Suites","LoginPage","loginSetup"
+"","10","setup","All Test Suite","Fri Nov 28 23:23:13 IST 2025","broken","Fri Nov 28 23:23:13 IST 2025","SignupPage","EmergencyWebApp_Suites","SignupPage","setup"
